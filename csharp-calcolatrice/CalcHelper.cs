@@ -7,8 +7,9 @@ using System.Numerics;
 
 namespace csharp_calcolatrice
 {
-    public static class CalcHelper
+    public static class CalcHelper<T> where T : INumber<T>, IComparable<T>
     {
+        /*
         //Somma di due numeri interi
         public static int Sum(int n1, int n2)
         {
@@ -69,7 +70,7 @@ namespace csharp_calcolatrice
         {
             return (n1 >= n2) ? n1 : n2;
         }
-
+        */
         // ***** BONUS *****
 
         public static int Pow(int baseNum, int expNum)
@@ -96,6 +97,38 @@ namespace csharp_calcolatrice
             }
         }
 
-        
+        // ***** SUPER SUPER BONUS *****
+
+        //Somma di due numeri
+        public static T Sum(T n1, T n2)
+        {
+            return n1 + n2;
+        }
+        //Differenza tra due numeri
+        public static T Difference(T n1, T n2)
+        {
+            return n1 - n2;
+        }
+        //Moltiplicazione di due numeri
+        public static T Product(T n1, T n2)
+        {
+            return n1 * n2;
+        }
+        //Valore assoluto di un numero
+        public static T AbsoluteValue(T n)
+        {
+            return (n < -n) ? -n : n;
+        }
+        //Minimo tra due numeri
+        public static T Min(T n1, T n2)
+        {
+            return (n1 <= n2) ? n1 : n2;
+        }
+        //Massimo tra due numeri
+        public static T Max(T n1, T n2)
+        {
+            return (n1 >= n2) ? n1 : n2;
+        }
+
     }
 }
