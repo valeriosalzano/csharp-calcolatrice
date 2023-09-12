@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Numerics;
 
 namespace csharp_calcolatrice
 {
@@ -51,30 +52,22 @@ namespace csharp_calcolatrice
         //Minimo tra due numeri interi
         public static int Min(int n1, int n2)
         {
-            if(n1 == n2)
-                throw new Exception("Numbers are equal.");
-            return (n1 < n2) ? n1 : n2;
+            return (n1 <= n2) ? n1 : n2;
         }
         //Minimo tra due numeri double
         public static double Min(double n1, double n2)
         {
-            if (n1 == n2)
-                throw new Exception("Numbers are equal.");
-            return (n1 < n2) ? n1 : n2;
+            return (n1 <= n2) ? n1 : n2;
         }
         //Massimo tra due numeri interi
         public static int Max(int n1, int n2)
         {
-            if (n1 == n2)
-                throw new Exception("Numbers are equal.");
-            return (n1 > n2) ? n1 : n2;
+            return (n1 >= n2) ? n1 : n2;
         }
         //Massimo tra due numeri double
         public static double Max(double n1, double n2)
         {
-            if (n1 == n2)
-                throw new Exception("Numbers are equal.");
-            return (n1 > n2) ? n1 : n2;
+            return (n1 >= n2) ? n1 : n2;
         }
 
         // ***** BONUS *****
@@ -102,5 +95,7 @@ namespace csharp_calcolatrice
                 }
             }
         }
+
+        
     }
 }
