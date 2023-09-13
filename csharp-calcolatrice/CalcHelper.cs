@@ -7,7 +7,7 @@ using System.Numerics;
 
 namespace csharp_calcolatrice
 {
-    public static class CalcHelper<T> where T : INumber<T>, IComparable<T>
+    public static class CalcHelper<T> where T : INumber<T>
     {
         /*
         //Somma di due numeri interi
@@ -75,6 +75,8 @@ namespace csharp_calcolatrice
 
         public static int Pow(int baseNum, int expNum)
         {
+            int result = 1;
+
             if (expNum < 0)
             {
                 if (baseNum == 0)
@@ -84,16 +86,11 @@ namespace csharp_calcolatrice
             }
             else
             {
-                if (expNum == 0)
-                    return 1;
-                else
+                for (int i = 0; i < expNum; i++)
                 {
-                    for (int i = 0; i < expNum; i++)
-                    {
-                        baseNum *= baseNum;
-                    }
-                    return baseNum;
+                    result *= baseNum;
                 }
+                return result;
             }
         }
 
